@@ -1,14 +1,16 @@
-import {AptosConfig, Network, Aptos, Ed25519PrivateKey, Account} from "@aptos-labs/ts-sdk";
+import {AptosConfig, Network, Aptos, Ed25519PrivateKey, Account, PrivateKey, PrivateKeyVariants} from "@aptos-labs/ts-sdk";
 
 import dotenv from "dotenv";
 dotenv.config(); 
 
 // Load environment variables
-const PETRA_PRIVATE_KEY = process.env.PETRA_PRIVATE_KEY;
-const FULL_NAME = process.env.FULL_NAME;
-const GITHUB = process.env.GITHUB;
-const EMAIL = process.env.EMAIL;
-const DISCORD = process.env.DISCORD;
+const PETRA_PRIVATE_KEY = process.env.PETRA_PRIVATE_KEY!;
+const FULL_NAME = process.env.FULL_NAME!;
+const GITHUB = process.env.GITHUB!;
+const EMAIL = process.env.EMAIL!;
+const DISCORD = process.env.DISCORD!;
+
+const formattedPrivateKey = PrivateKey.formatPrivateKey(PETRA_PRIVATE_KEY, PrivateKeyVariants.Ed25519);
 
 async function main() {
     // Create aptos instance and set it to testnet
@@ -16,7 +18,7 @@ async function main() {
     const aptos = new Aptos(config);
 
     // Wallet Account
-    const PRIVATE_KEY = new Ed25519PrivateKey(PETRA_PRIVATE_KEY); // edit
+    const PRIVATE_KEY = new Ed25519PrivateKey(formattedPrivateKey); // edit
     // You can get your private key, by going to your Petra wallet
     const MY_ACCOUNT = Account.fromPrivateKey({
         privateKey: PRIVATE_KEY,
