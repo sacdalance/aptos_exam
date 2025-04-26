@@ -1,4 +1,5 @@
 import {AptosConfig, Network, Aptos, Ed25519PrivateKey, Account} from "@aptos-labs/ts-sdk";
+
 import dotenv from "dotenv";
 dotenv.config(); 
 
@@ -11,7 +12,7 @@ const DISCORD = process.env.DISCORD;
 
 async function main() {
     // Create aptos instance and set it to testnet
-    const config = new AptosConfig({ network: Network.MAINNET });
+    const config = new AptosConfig({ network: Network.TESTNET });
     const aptos = new Aptos(config);
 
     // Wallet Account
@@ -60,7 +61,6 @@ async function main() {
     });
       
     // optional: so we can see if it succeeded
-      
     console.log(
         `Transaction completed with status: ${
           txnResult.success ? "SUCCESS" : "FAILURE"
