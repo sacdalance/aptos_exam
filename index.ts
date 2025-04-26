@@ -2,9 +2,9 @@ import {AptosConfig, Network, Aptos, Ed25519PrivateKey, Account} from "@aptos-la
 import dotenv from "dotenv";
 dotenv.config(); 
 
-const PETRA_PRIVATE_KEY = process.env.PRIVATE_KEY;
+const PETRA_PRIVATE_KEY = process.env.PETRA_PRIVATE_KEY;
 const FULL_NAME = process.env.FULL_NAME;
-const GITHUB = process.env.GITHUB_LINK;
+const GITHUB = process.env.GITHUB;
 const EMAIL = process.env.EMAIL;
 const DISCORD = process.env.DISCORD;
 
