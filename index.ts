@@ -2,6 +2,7 @@ import {AptosConfig, Network, Aptos, Ed25519PrivateKey, Account} from "@aptos-la
 import dotenv from "dotenv";
 dotenv.config(); 
 
+// Load environment variables
 const PETRA_PRIVATE_KEY = process.env.PETRA_PRIVATE_KEY;
 const FULL_NAME = process.env.FULL_NAME;
 const GITHUB = process.env.GITHUB;
@@ -17,7 +18,7 @@ async function main() {
     const PRIVATE_KEY = new Ed25519PrivateKey(PETRA_PRIVATE_KEY); // edit
     // You can get your private key, by going to your Petra wallet
     const MY_ACCOUNT = Account.fromPrivateKey({
-    privateKey: PRIVATE_KEY,
+        privateKey: PRIVATE_KEY,
     });
     
     
