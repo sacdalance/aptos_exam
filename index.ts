@@ -3,7 +3,7 @@ import {AptosConfig, Network, Aptos, Ed25519PrivateKey, Account, PrivateKey, Pri
 import dotenv from "dotenv";
 dotenv.config(); 
 
-// Load environment variables
+// Load environment variables -- only on my local 
 const PETRA_PRIVATE_KEY = process.env.PETRA_PRIVATE_KEY!;
 const FULL_NAME = process.env.FULL_NAME!;
 const GITHUB = process.env.GITHUB!;
