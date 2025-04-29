@@ -48,8 +48,8 @@ async function main() {
     });
 
     const senderAuthenticator = aptos.transaction.sign({
-    signer: MY_ACCOUNT,
-    transaction,
+        signer: MY_ACCOUNT,
+        transaction,
     });
 
     const pendingTransaction = await aptos.transaction.submit.simple({
